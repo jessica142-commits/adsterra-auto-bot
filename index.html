@@ -1,13 +1,353 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Adsterra Auto Bot</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adsterra Auto Bot — Setup Guide</title>
+    <style>
+        :root {
+            --primary: #4CAF50;
+            --primary-dark: #3d8b40;
+            --accent: #7c3aed;
+            --accent-hover: #6d28d9;
+            --bg: #f4f6f8;
+            --card-bg: #ffffff;
+            --text: #1f2933;
+            --text-muted: #5f6b7a;
+            --border: #e3e8ee;
+            --danger: #dc2626;
+            --radius: 12px;
+            --max-width: 1080px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .header-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+        }
+
+        .logo {
+            margin: 0 0 12px;
+            font-size: clamp(26px, 4vw, 40px);
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .note {
+            display: inline-block;
+            margin: 0;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 999px;
+            font-size: 14px;
+        }
+
+        .note .red {
+            color: #ffe066;
+            font-style: italic;
+            font-weight: 600;
+        }
+
+        main {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 32px 20px 64px;
+        }
+
+        .content {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .content h3 {
+            margin: 0 0 12px;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 28px;
+            height: 28px;
+            padding: 0 6px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .content p,
+        .content span {
+            color: var(--text-muted);
+            margin: 6px 0;
+            display: block;
+        }
+
+        .content ul {
+            margin: 8px 0;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .content li {
+            margin: 4px 0;
+        }
+
+        .red {
+            color: var(--danger);
+            font-weight: 600;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 18px auto 0;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: #fafbfc;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 16px 0 4px;
+            padding: 12px 28px;
+            background: var(--accent);
+            color: #fff;
+            font-size: 17px;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.2s ease, transform 0.1s ease;
+        }
+
+        .btn:hover {
+            background: var(--accent-hover);
+            text-decoration: none;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        .warning {
+            max-width: var(--max-width);
+            margin: 0 auto 48px;
+            padding: 24px;
+            background: #fff5f5;
+            border: 2px solid var(--danger);
+            border-left-width: 8px;
+            border-radius: var(--radius);
+        }
+
+        .warning h1 {
+            margin: 0 0 8px;
+            font-size: 22px;
+            color: var(--danger);
+        }
+
+        .warning p {
+            margin: 0;
+            color: var(--text-muted);
+        }
+
+        .footer-note {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px 40px;
+            font-size: 13px;
+            color: var(--text-muted);
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                padding: 18px;
+            }
+            .header {
+                padding: 28px 16px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <main>
-    <h1>Adsterra Auto Bot</h1>
-  </main>
+    <header class="header">
+        <div class="header-inner">
+            <h1 class="logo">Adsterra Auto Bot</h1>
+            <p class="note"><span class="red">Note:</span> use only for smart/direct link</p>
+        </div>
+    </header>
+
+    <main>
+        <section class="content">
+            <h3><span class="step-badge">1</span> Open Adsterra — click "START EARNING"</h3>
+            <img src="./img/1.PNG" alt="Step 1: Adsterra start earning page">
+        </section>
+
+        <section class="content">
+            <h3><span class="step-badge">2</span> Click on "Smartlinks"</h3>
+            <img src="./img/2.PNG" alt="Step 2: Smartlinks menu">
+        </section>
+
+        <section class="content">
+            <h3><span class="step-badge">3</span> Click on "ADD SMARTLINK"</h3>
+            <img src="./img/3.PNG" alt="Step 3: Add smartlink button">
+        </section>
+
+        <section class="content">
+            <h3><span class="step-badge">4</span> Click on "ADD"</h3>
+            <img src="./img/4.PNG" alt="Step 4: Confirm add">
+        </section>
+
+        <section class="content">
+            <h3><span class="step-badge">5</span> Copy all links</h3>
+            <img src="./img/5.PNG" alt="Step 5: Copy links">
+        </section>
+
+        <section class="content">
+            <h3><span class="step-badge">6</span> Download the tool</h3>
+            <p>
+                Primary link: <a href="https://drive.usercontent.google.com/download?id=1c82WqROD_29kbmp7U37u_nqywqMHqR2V&export=download&authuser=0">Click me</a>
+            </p>
+            <p>
+                Doesn't work? <a href="https://drive.google.com/file/d/1c82WqROD_29kbmp7U37u_nqywqMHqR2V/view?usp=sharing">Click me</a>
+            </p>
+            <a class="btn" href="https://drive.usercontent.google.com/download?id=1c82WqROD_29kbmp7U37u_nqywqMHqR2V&export=download&authuser=0">Download</a>
+            <img src="./img/6.PNG" alt="Step 6: Download page">
+        </section>
+
+        <section class="content">
+            <h3><span class="step-badge">7</span> Download file</h3>
+            <p>Make sure the file size is: <strong>492MB</strong></p>
+            <img src="./img/7.PNG" alt="Step 7: File size check">
+        </section>
+
+        <section class="content">
+            <h3><span class="step-badge">8</span> Open file and unzip it</h3>
+            <img src="./img/8.PNG" alt="Step 8: Unzip the file">
+        </section>
+
+        <section class="content">
+            <h3><span class="step-badge">9</span> Run the <code>main.exe</code> file</h3>
+            <img src="./img/9.PNG" alt="Step 9: Run main.exe">
+        </section>
+
+        <section class="content">
+            <h3><span class="step-badge">10</span> Click on "More info"</h3>
+            <img src="./img/10.PNG" alt="Step 10: More info on SmartScreen">
+        </section>
+
+        <section class="content">
+            <h3><span class="step-badge">11</span> Click on "Run anyway"</h3>
+            <p>Wait a little while for it to load.</p>
+            <img src="./img/11.PNG" alt="Step 11: Run anyway">
+        </section>
+
+        <section class="content">
+            <h3><span class="step-badge">12</span> Customize visits and browser window count</h3>
+            <p>
+                <span class="red">Note:</span> If your RAM is 4GB set threads to 5 max;
+                8GB = 10 threads; 16GB = 20; 32GB = 40. Do not overload it.
+            </p>
+            <img src="./img/12.PNG" alt="Step 12: Configure threads and visits">
+        </section>
+
+        <section class="content">
+            <h3><span class="step-badge">13</span> Choose any mode</h3>
+            <ul>
+                <li><strong>Headless</strong> — recommended (shows nothing, works in background)</li>
+                <li><strong>Show Browser</strong> — will show the windows</li>
+                <li><strong>Hide off-screen</strong> — only shows windows in the taskbar, not on the display</li>
+            </ul>
+            <img src="./img/13.PNG" alt="Step 13: Choose mode">
+        </section>
+
+        <section class="content">
+            <h3><span class="step-badge">14</span> Add links</h3>
+            <ul>
+                <li>Minimum 1 link</li>
+                <li>3–5 links recommended (you can add more)</li>
+            </ul>
+            <img src="./img/14.PNG" alt="Step 14: Add links">
+        </section>
+
+        <section class="content">
+            <h3><span class="step-badge">15</span> Start app</h3>
+            <img src="./img/15.PNG" alt="Step 15: Start app">
+        </section>
+
+        <section class="content">
+            <h3>It runs silently in the background because of headless mode</h3>
+            <img src="./img/16.PNG" alt="Headless mode running silently">
+        </section>
+
+        <section class="content">
+            <h3>This is the Show Browser mode</h3>
+            <img src="./img/17.PNG" alt="Show browser mode">
+        </section>
+
+        <section class="content">
+            <h3>This is the Off-screen mode</h3>
+            <img src="./img/18.PNG" alt="Off-screen mode">
+        </section>
+
+        <section class="content">
+            <h1>Why did I give it to you for free?</h1>
+            <p>Because it has a virus!</p>
+            <p>Naaaahhhhaaa! Just kidding.</p>
+            <p>I added my 2 links into it so I can earn a little from you — and you can earn too.</p>
+            <p>On this earth nothing is for free, and never hope from others.</p>
+            <p>Don't worry, it's totally safe.</p>
+        </section>
+    </main>
+
+    <div class="warning">
+        <h1>Warning: Use New Accounts</h1>
+        <p>If you're able to get organic traffic, do not use it. (You know what I mean.)</p>
+    </div>
+
+    <p class="footer-note">Adsterra Auto Bot — Setup Guide</p>
 </body>
 </html>
