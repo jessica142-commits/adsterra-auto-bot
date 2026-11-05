@@ -74,6 +74,42 @@
             padding: 32px 20px 64px;
         }
 
+        /* ---- Intro / description block ---- */
+        .intro {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-left: 8px solid var(--primary);
+            border-radius: var(--radius);
+            padding: 24px 28px;
+            margin-bottom: 32px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .intro h2 {
+            margin: 0 0 12px;
+            font-size: 22px;
+            color: var(--text);
+        }
+
+        .intro p {
+            margin: 0 0 12px;
+            color: var(--text-muted);
+        }
+
+        .intro p:last-child {
+            margin-bottom: 0;
+        }
+
+        .intro ul {
+            margin: 8px 0 12px;
+            padding-left: 20px;
+            color: var(--text-muted);
+        }
+
+        .intro li {
+            margin: 4px 0;
+        }
+
         .content {
             background: var(--card-bg);
             border: 1px solid var(--border);
@@ -203,7 +239,8 @@
         }
 
         @media (max-width: 600px) {
-            .content {
+            .content,
+            .intro {
                 padding: 18px;
             }
             .header {
@@ -221,6 +258,27 @@
     </header>
 
     <main>
+        <!-- ===== Intro / description ===== -->
+        <section class="intro">
+            <h2>What is Adsterra Auto Bot?</h2>
+            <p>
+                Adsterra Auto Bot is a desktop automation tool that opens multiple browser sessions
+                and loads your Adsterra smart/direct links in the background. It is designed to help
+                you generate repeated visits to your own links with minimal effort.
+            </p>
+            <ul>
+                <li><strong>Runs locally</strong> on Windows as <code>main.exe</code> — no server or account needed.</li>
+                <li><strong>Configurable</strong> — set the number of visits and concurrent browser windows (threads) based on your RAM.</li>
+                <li><strong>Three modes</strong> — Headless (invisible), Show Browser, or Hide off-screen.</li>
+                <li><strong>Multi-link support</strong> — add several smartlinks and let the bot cycle through them.</li>
+                <li><strong>Free to use</strong> — the author includes 2 of their own links in the rotation so both parties earn.</li>
+            </ul>
+            <p>
+                Follow the steps below to set it up. <span class="red">Note:</span> use a new Adsterra account —
+                automated traffic can get your account flagged.
+            </p>
+        </section>
+
         <section class="content">
             <h3><span class="step-badge">1</span> Open Adsterra — click "START EARNING"</h3>
             <img src="./img/1.PNG" alt="Step 1: Adsterra start earning page">
